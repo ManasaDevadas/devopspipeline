@@ -1,0 +1,10 @@
+parameters:
+- name: foo
+  type: object
+  default: []
+
+steps:
+- checkout: none
+- ${{ if eq(length(parameters.foo), 0) }}:
+  - script: echo Foo is empty
+    displayName: Foo is empty
